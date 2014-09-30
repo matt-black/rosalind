@@ -22,11 +22,10 @@ def main(file_path):
     kmers = get_freq_kmers(kmer_dict)
     print(' '.join(kmers))
 
-def get_freq_kmers(kmer_dict):
+def get_freq_kmers(kmer_dict, max_val=0):
     """
     Given a kmer_dict of frequencies, returns a list of the most frequent ones
     """
-    max_val = 0
     freq_kmers = []
     for k in sorted(kmer_dict, key=kmer_dict.get, reverse=True):
         new_val = kmer_dict.get(k)
